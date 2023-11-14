@@ -33,7 +33,28 @@ class Mortgage:
             raise ValueError("Invalid Amortization period provided.")
         
 
-        
+        # Initialize other attributes...
+        self._amount = None  # Private attribute to store Loan Amount
+        self.set_amount(loan_amount)  # Use the mutator to set the Loan Amount
+
+    # Mutator  for Loan Amount
+    def set_amount(self, value):
+        if value > 0:
+            self._amount = value
+        else:
+            raise ValueError("Loan Amount must be positive.")
+
+    # Accessor  for Loan Amount
+    def get_amount(self):
+        return self._amount
+    
+
+
+    
+
+
+
+
 
         
         
