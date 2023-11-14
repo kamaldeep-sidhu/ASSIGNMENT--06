@@ -27,10 +27,12 @@ class Mortgage:
         self.frequency = frequency
 
         # Validate Amortization
-        if amortization in self. VALID_AMORTIZATION:
+        if amortization in  VALID_AMORTIZATION:
             self.amortization = amortization
         else:
             raise ValueError("Invalid Amortization period provided.")
+        
+
         
 
         
