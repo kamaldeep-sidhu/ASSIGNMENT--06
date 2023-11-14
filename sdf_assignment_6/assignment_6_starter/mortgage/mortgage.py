@@ -1,9 +1,43 @@
 """
 Description: A class meant to manage Mortgage options.
-Author: {Student Name}
-Date: {Date}
+Author: {kamaldeep kaur }
+Date: {14-11-2023}
 Usage: Create an instance of the Mortgage class to manage mortgage records and 
 calculate payments.
 """
+from mortgage.pixell_lookup import MortgageRate, MortgageFrequency, VALID_AMORTIZATION
+class Mortgage:
+    def __init__(self, loan_amount: float, rate: MortgageRate, frequency: MortgageFrequency, amortization: int):
+        # Validate Loan Amount
+        if loan_amount > 0:
+            self.loan_amount = loan_amount
+        else:
+            raise ValueError("Loan Amount must be positive.")
+
+        # Validate Rate
+        try:
+            self.rate = MortgageRate(rate)
+        except ValueError:
+            raise ValueError("Invalid Rate provided.")    
+
+        # Validate Frequency
+        if not isinstance(frequency, MortgageFrequency):
+            raise ValueError("Invalid Mortgage Frequency provided.")
+
+        self.frequency = frequency
+
+        # Validate Amortization
+        if amortization in self. VALID_AMORTIZATION:
+            self.amortization = amortization
+        else:
+            raise ValueError("Invalid Amortization period provided.")
+        
+
+        
+        
+
+        
+
+        
 
 
