@@ -50,6 +50,22 @@ class Mortgage:
     
 
 
+        # Initialize other attributes...
+        self._rate = None  # Private attribute to store Rate
+        self.set_rate(rate)  # Use the mutator to set the Rate
+
+    # Mutator (Setter) for Rate
+    def set_rate(self, value):
+        if not isinstance(value, MortgageRate):
+            raise ValueError("Invalid Rate provided. Must be an instance of MortgageRate enum.")
+        self._rate = value
+
+    # Accessor (Getter) for Rate
+    def get_rate(self):
+        return self._rate
+
+    
+
     
 
 
