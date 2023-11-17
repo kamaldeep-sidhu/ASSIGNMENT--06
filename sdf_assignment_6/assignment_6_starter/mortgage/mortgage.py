@@ -6,6 +6,7 @@ Usage: Create an instance of the Mortgage class to manage mortgage records and
 calculate payments.
 """
 from mortgage.pixell_lookup import MortgageRate, MortgageFrequency, VALID_AMORTIZATION
+
 class Mortgage:
     def __init__(self, loan_amount: float, rate: MortgageRate, frequency: MortgageFrequency, amortization: int):
         # Validate Loan Amount
@@ -63,10 +64,34 @@ class Mortgage:
     # Accessor (Getter) for Rate
     def get_rate(self):
         return self._rate
+    
+
+    # def __init__(self, frequency):
+    #     self._frequency = frequency  # Private attribute with an underscore
+
+    # Accessor (Getter)
+    def get_frequency(self):
+        return self._frequency
+
+    # Mutator (Setter)
+    def set_frequency(self, new_frequency):
+        if not isinstance(new_frequency, MortgageFrequency):
+            raise ValueError("Invalid frequency provided")
+        self._frequency = new_frequency
+    
+    # def __init__(self, frequency, amortization):
+    #     # ... other attributes and initialization code
+    #     self._frequency = frequency
+    #     self._amortization = amortization
 
     
 
+   
+
+
     
+
+
 
 
 
